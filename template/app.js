@@ -12,7 +12,7 @@ const env = require('./lib/config').getEnv();
 {{#oauth}}
 const oauth = require('nx-oauth-koa');
 {{/oauth}}
-const app = koa();
+const app = new koa();
 
 app.use(bodyParser());
 app.use(koaJson());

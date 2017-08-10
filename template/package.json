@@ -38,6 +38,9 @@
     "swig": "^1.4.2",
     "co": "^4.5.4"
   },
+  "engines": {
+    "node": ">= 7.6.0"
+  },
   "devDependencies": {},
   "author": "{{ author }}",
   "license": "ISC"
