@@ -13,14 +13,14 @@ var HomeIndex = async function (ctx) {
     // let cache = await ctx.tair.getCache('demo-test-set');
     {{/tair}}
 
-    return ctx.body = await ctx.app.render('./home/index',{
+    ctx.body = await ctx.app.render('./home/index',{
         project: "{{ name }}",
         author: "{{ author }}"
     });
 };
 {{#pug}}
 var JadeDemo = async function() {
-    return ctx.body = await ctx.app.render('./home/author.pug',{
+    ctx.body = await ctx.app.render('./home/author.pug',{
         user: {
             name: "{{ author }}",
             appearance: 'handsome'
