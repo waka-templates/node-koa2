@@ -12,13 +12,13 @@ let tair = require('../lib/tair');
 let sentry = require('../lib/sentry');
 {{/sentry}}
 module.exports.register = function (app) {
-    app.render = render;
-    app.service = service;
+    app.context.render = render;
+    app.context.service = service;
     {{#tair}}
-    app.tair = tair;
+    app.context.tair = tair;
     {{/tair}}
     {{#sentry}}
-    app.sentry = sentry;
+    app.context.sentry = sentry;
     {{/sentry}}
 };
 

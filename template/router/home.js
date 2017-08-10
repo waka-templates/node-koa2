@@ -4,23 +4,23 @@ var HomeIndex = async function (ctx) {
 
     {{#mysql}}
     //eg: use context.service
-    //let data = await ctx.app.service.demo.getUserById(57);
+    //let data = await ctx.service.demo.getUserById(57);
     {{/mysql}}
 
     {{#tair}}
     //eg: use context.tair
-    // await ctx.app.tair.setCache('demo-test-set','value-for-test');
+    // await ctx.tair.setCache('demo-test-set','value-for-test');
     // let cache = await ctx.tair.getCache('demo-test-set');
     {{/tair}}
 
-    ctx.body = await ctx.app.render('./home/index',{
+    ctx.body = await ctx.render('./home/index',{
         project: "{{ name }}",
         author: "{{ author }}"
     });
 };
 {{#pug}}
 var JadeDemo = async function() {
-    ctx.body = await ctx.app.render('./home/author.pug',{
+    ctx.body = await ctx.render('./home/author.pug',{
         user: {
             name: "{{ author }}",
             appearance: 'handsome'
