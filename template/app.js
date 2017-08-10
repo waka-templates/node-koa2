@@ -9,6 +9,7 @@ const bodyParser = require('koa-bodyparser');
 const controller = require('./router');
 const cxt = require('./context/index');
 const env = require('./lib/config').getEnv();
+const convert = require('koa-convert');
 {{#oauth}}
 const oauth = require('nx-oauth-koa');
 {{/oauth}}
@@ -22,7 +23,7 @@ const ignorePath = {
     path: [],
     pathRegex: []
 };
-app.use(oauth('appKey','appSecret','http://127.0.0.1:9900/oauth/callback',ignorePath));
+app.use(convert(oauth('appKey','appSecret','http://127.0.0.1:9900/oauth/callback',ignorePath)));
 {{/oauth}}
 app.use(serve(path.join(__dirname, 'public')));
 app.use(compress());
