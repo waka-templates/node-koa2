@@ -19,7 +19,7 @@ var HomeIndex = async function (ctx) {
     });
 };
 {{#pug}}
-var JadeDemo = async function() {
+var JadeDemo = async function(ctx) {
     ctx.body = await ctx.render('./home/author.pug',{
         user: {
             name: "{{ author }}",
