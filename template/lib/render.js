@@ -1,6 +1,6 @@
 'use strict';
-let views = require('co-views');
-let env = process.env.NODE_ENV || 'development';
+const views = require('co-views');
+const env = process.env.NODE_ENV || 'development';
 
 module.exports = views(__dirname + '/../views', {
 {{#if pug}}

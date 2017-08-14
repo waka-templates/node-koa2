@@ -1,5 +1,5 @@
 'use strict';
-var auth = async function (ctx) {
+let auth = async function (ctx) {
     console.log(ctx.state);
     if(ctx.state.oauth.auth.access_token){
         ctx.cookies.set(`nx_access_token`,ctx.state.oauth.auth.access_token);

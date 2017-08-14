@@ -1,6 +1,6 @@
 'use strict';
-var config = require('../config.js');
-var env = process.env.NODE_ENV || 'development';
+let config = require('../config.js');
+let env = process.env.NODE_ENV || 'development';
 module.exports = {
 {{#mysql}}
     getDbConfig: function(){

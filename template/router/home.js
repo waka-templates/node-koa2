@@ -1,6 +1,6 @@
 'use strict';
 
-var HomeIndex = async function (ctx) {
+let HomeIndex = async function (ctx) {
 
     {{#mysql}}
     //eg: use context.service
@@ -19,7 +19,7 @@ var HomeIndex = async function (ctx) {
     });
 };
 {{#pug}}
-var JadeDemo = async function(ctx) {
+let JadeDemo = async function(ctx) {
     ctx.body = await ctx.render('./home/author.pug',{
         user: {
             name: "{{ author }}",

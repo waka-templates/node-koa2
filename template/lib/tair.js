@@ -1,17 +1,17 @@
 'use strict';
-var tair_client = require('@mtfe/node-tair');
-var config = require('./config');
-var tairConfig = config.getTairConfig();
-var namespace = tairConfig.namespace;
-var expire = 0;
-var tair = new tair_client(tairConfig.group, tairConfig.server, function (err) {
+const tair_client = require('@mtfe/node-tair');
+let config = require('./config');
+let tairConfig = config.getTairConfig();
+let namespace = tairConfig.namespace;
+let expire = 0;
+let tair = new tair_client(tairConfig.group, tairConfig.server, function (err) {
     if (err) {
         console.log('创建tair客户端失败:', err);
     }
 });
 
 // 建议在这里统一对缓存key添加前缀, 避免冲突
-// eg: var prefix = 'web_staging_';
+// eg: let prefix = 'web_staging_';
 // 然后在下面每个方法中，设置 key = prefix + key;
 
 module.exports = {

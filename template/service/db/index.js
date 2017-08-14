@@ -1,8 +1,8 @@
 'use strict';
-var Sequelize = require('sequelize');
-var config = require('../../lib/config');
-var dbOptions = config.getDbConfig();
-var client = new Sequelize(
+const Sequelize = require('sequelize');
+let config = require('../../lib/config');
+let dbOptions = config.getDbConfig();
+const client = new Sequelize(
     dbOptions.database,
     dbOptions.username,
     dbOptions.password, {

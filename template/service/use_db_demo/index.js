@@ -3,8 +3,8 @@
 */
 
 'use strict';
-var db = require('../db');
-var Sequelize = require('sequelize');
+let db = require('../db');
+const Sequelize = require('sequelize');
 module.exports = {
     getUserById: async function (id) {
         return await db.query('select * from udb where id = :id', {

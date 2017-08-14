@@ -1,6 +1,6 @@
 'use strict';
-var Router = require('koa-router');
-var router = new Router();
+let Router = require('koa-router');
+let router = new Router();
 
 require('./home.js').register(router);
 {{#oauth}}

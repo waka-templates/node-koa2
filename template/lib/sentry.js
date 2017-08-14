@@ -4,9 +4,9 @@
  */
 'use strict';
 
-var SENTRY_DSN = require('./config').getSentryDSN();
-var raven = require('raven');
-var client = new raven.Client(SENTRY_DSN);
+let SENTRY_DSN = require('./config').getSentryDSN();
+const raven = require('raven');
+let client = new raven.Client(SENTRY_DSN);
 client.on('error', function (e) {
     //   e.reason -- raw response body
     //   e.statusCode -- response status code
