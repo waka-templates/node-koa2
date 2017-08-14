@@ -16,7 +16,7 @@
 * 欲使用其他模板引擎，可通过简单的方式自行设置，以ejs为例:
     * package.json添加对ejs的依赖
     * views目录下添加文件时以.ejs为文件拓展名
-    * 然后在router中即可正常render页面了: this.render('./xxx/xxx.ejs',{})
+    * 然后在router中即可正常render页面了: ctx.render('./xxx/xxx.ejs',{})
 * 更多模板引擎参见 https://github.com/tj/consolidate.js 
 
 {{#tair}}

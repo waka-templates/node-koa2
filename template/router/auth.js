@@ -1,9 +1,9 @@
 'use strict';
 var auth = async function (ctx) {
-    console.log(this.state);
-    if(this.state.oauth.auth.access_token){
-        this.cookies.set(`nx_access_token`,this.state.oauth.auth.access_token);
-        this.redirect('/home/swig')
+    console.log(ctx.state);
+    if(ctx.state.oauth.auth.access_token){
+        ctx.cookies.set(`nx_access_token`,ctx.state.oauth.auth.access_token);
+        ctx.redirect('/home/swig')
     }else{
         ctx.body = '有问题'
     }
