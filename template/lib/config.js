@@ -1,6 +1,8 @@
 'use strict';
 let config = require('../config.js');
 let env = process.env.NODE_ENV || 'development';
+const getPrivateKey = require('./kms');
+
 module.exports = {
 {{#mysql}}
     getDbConfig: function(){
@@ -19,5 +21,9 @@ module.exports = {
 {{/sentry}}
     getEnv: function () {
         return env;
+    },
+    getDbPassword:function() {
+        // 密码周期1800秒
+        return getPrivateKey('com.sankuai.xm.neixin.quality','db.password');
     }
 };

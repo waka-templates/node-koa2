@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@mtfe/hlb": "^0.2.0",
+    "@mx/kms": "^0.2.0",
     {{#tair}}
     "@mtfe/node-tair": "0.0.3",
     {{/tair}}

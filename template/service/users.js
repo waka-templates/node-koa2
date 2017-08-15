@@ -1,13 +1,13 @@
-/*
-    简单演示数据库操作方法, 更多用法参见http://docs.sequelizejs.com
-*/
-
+/**
+ * * Created by lee on 2017/8/15
+ */
 'use strict';
-let db = require('../db');
+let db = require('../db').sequelize;
 const Sequelize = require('sequelize');
+
 module.exports = {
     getUserById: async function (id) {
-        return await db.query('select * from udb where id = :id', {
+        return await db.query('select * from users where id = :id', {
             replacements: {
                 id: id
             },
